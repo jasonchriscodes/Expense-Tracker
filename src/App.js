@@ -1,3 +1,4 @@
+import React from "react";
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
   // const para = document.createElement("p");
   // para.textContent = "This is also visible";
   // document.getElementById("root").append(para);
+
+  // using JSX code
   return (
     // simplify using JSX (lower case element are build in html element while upper case are define by dev)
     <div>
@@ -34,6 +37,15 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
+
+  // OR
+  // using react object
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 }
 
 export default App;
