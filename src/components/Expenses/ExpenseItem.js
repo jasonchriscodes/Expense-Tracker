@@ -3,7 +3,7 @@ import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   // only have 1 root element per JSX code (return element)
   // solve it by wrap it all in one div
   // toISOstring() change object to string
