@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
-  let title = props.title;
+  /**
+   * State is used if we have data that changes should be reflected on the user interface
+   * Use state return 2 values:
+   * 1. the current value of the state (title)
+   * 2. a function to update the state (setTitle)
+   */
+  const [title, setTitle] = useState(props.title);
 
   // function clickHandler(){
   //   console.log("Clicked!!!");
@@ -13,7 +19,7 @@ const ExpenseItem = (props) => {
   //OR
 
   const clickHandler = () => {
-    title = "Updated!";
+    setTitle("Updated!!!"); 
     console.log(title);
   };
 
