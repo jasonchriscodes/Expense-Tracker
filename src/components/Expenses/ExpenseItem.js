@@ -11,6 +11,7 @@ const ExpenseItem = (props) => {
    * 2. a function to update the state (setTitle)
    */
   const [title, setTitle] = useState(props.title);
+  console.log("ExpenseItem evaluated by React");
 
   // function clickHandler(){
   //   console.log("Clicked!!!");
@@ -19,7 +20,7 @@ const ExpenseItem = (props) => {
   //OR
 
   const clickHandler = () => {
-    setTitle("Updated!!!"); 
+    setTitle("Updated!!!");
     console.log(title);
   };
 
