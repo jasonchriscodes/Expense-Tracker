@@ -2,20 +2,37 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState(""); // listen always a string, even if we enter a number
-  const [enteredDate, setEnteredDate] = useState("");
+  // const [enteredTitle, setEnteredTitle] = useState("");
+  // const [enteredAmount, setEnteredAmount] = useState(""); // listen always a string, even if we enter a number
+  // const [enteredDate, setEnteredDate] = useState("");
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value); // stored state
+    // setEnteredTitle(event.target.value); // stored state
+    setUserInput({
+      ...userInput, // copy all the other properties
+      enteredTitle: event.target.value, // change only enteredTitle
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    // setEnteredAmount(event.target.value);
+    setUserInput({
+      ...userInput, // copy all the other properties
+      enteredAmount: event.target.value,
+    });
   };
 
   const dateChageHandler = (event) => {
-    setEnteredDate(event.target.value);
+    // setEnteredDate(event.target.value);
+    setUserInput({
+      ...userInput, // copy all the other properties
+      enteredDate: event.target.value,
+    });
   };
 
   return (
