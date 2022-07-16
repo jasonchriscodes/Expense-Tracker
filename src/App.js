@@ -25,6 +25,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   // imperative JS approach, cumbersome
   // const para = document.createElement("p");
   // para.textContent = "This is also visible";
@@ -34,7 +39,7 @@ const App = () => {
   return (
     // simplify using JSX (lower case element are build in html element while upper case are define by dev)
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
