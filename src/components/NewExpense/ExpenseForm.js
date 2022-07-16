@@ -20,10 +20,10 @@ const ExpenseForm = () => {
     // use this approach if schedule a lot of state updates at the same time, you could be depending on an outdated or incorrect state snapshot if use above approach. This approach will guarantee that the state snapshot it will always be the latest state snapshot and keeping all scheduled state updates in mind (safer way to ensure always the latest state snapshot)
     // Always use this approach whenever state update depends on the previous state.
     // setUserInput((prevState) => {
-      // return {
-      //   ...prevState,
-      //   enteredTitle: event.target.value,
-      // };
+    // return {
+    //   ...prevState,
+    //   enteredTitle: event.target.value,
+    // };
     // });
   };
 
@@ -43,8 +43,20 @@ const ExpenseForm = () => {
     // });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault(); // prevent page reloading
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
