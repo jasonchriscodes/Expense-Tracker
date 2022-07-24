@@ -21,6 +21,7 @@ const Expenses = (props) => {
         {props.items.map((expense) => (
           // transform expense obj to JSX element
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
